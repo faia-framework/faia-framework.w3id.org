@@ -26,6 +26,8 @@ RewriteBase /faia-framework/
 RewriteRule ^faia_ont/?$ https://raw.githubusercontent.com/faia-framework/w3id.docs/main/faia_ont/faia_ont.ttl [R=303,L]
 # Specific file: faia_ont/<version>.ttl
 RewriteRule ^faia_ont/(.+)\.ttl$ https://raw.githubusercontent.com/faia-framework/w3id.docs/main/faia_ont/$1.ttl [R=303,L]
+# Term IRI: faia_ont/<term> (e.g. faia_ont/faiaFlag) → the ontology that defines it
+RewriteRule ^faia_ont/[A-Za-z][A-Za-z0-9_-]*$ https://raw.githubusercontent.com/faia-framework/w3id.docs/main/faia_ont/faia_ont.ttl [R=303,L]
 
 # ------------------------------
 # FAIA Vocabulary files
@@ -34,6 +36,8 @@ RewriteRule ^faia_ont/(.+)\.ttl$ https://raw.githubusercontent.com/faia-framewor
 RewriteRule ^faia_vocab/?$ https://raw.githubusercontent.com/faia-framework/w3id.docs/main/faia_vocab/faia_vocab.ttl [R=303,L]
 # Specific file: faia_vocab/<version>.ttl
 RewriteRule ^faia_vocab/(.+)\.ttl$ https://raw.githubusercontent.com/faia-framework/w3id.docs/main/faia_vocab/$1.ttl [R=303,L]
+# Term IRI: faia_vocab/<term> (e.g. faia_vocab/HCC) → the vocabulary that defines it
+RewriteRule ^faia_vocab/[A-Za-z][A-Za-z0-9_-]*$ https://raw.githubusercontent.com/faia-framework/w3id.docs/main/faia_vocab/faia_vocab.ttl [R=303,L]
 
 # ------------------------------
 # Default response (redirect to GitHub repo)
